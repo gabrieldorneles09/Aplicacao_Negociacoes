@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ex5</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	class Funcionario{
+		constructor(email){
+			this._email = email;
+		}
+
+		get email(){
+			return this._email;
+		}
+
+		set email(email){
+			this._email = email;
+		}
+	}
+
+	let funcionario = new Funcionario('abc@abc.com');
+	let funcionarioProxy = new Proxy(funcionario, {
+		set(target, prop, value, receiver){
+			console.log(`Antigo valor: ${target[prop]}, novo valor: ${value}`);
+			console.log(`Propriedade: ${prop}`);
+			return Reflect.set(target, prop, value, receiver);
+		}
+	});
+
+	funcionarioProxy.email = 'ggg@ggg.org';
+
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ex2</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	let funcionario = new Proxy({email: 'abc@abc.com'}, {
+
+		get(target, prop, receiver){
+			console.log("Armadilha aqui!");
+			return `**${target[prop]}**`;
+		}
+
+	});
+	console.log(funcionario.email);
+
+</script>
+</html>

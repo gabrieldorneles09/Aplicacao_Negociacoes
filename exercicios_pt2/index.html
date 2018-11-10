@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ex1</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	let funcionario = {email: 'abc@abc.com'};
+	let funcionarioProxy = new Proxy(funcionario, {
+
+		get(target, prop, receiver){
+			console.log("Armadilha aqui!");
+			return Reflect.get(target, prop, receiver);
+		}
+
+	});
+
+	console.log(funcionarioProxy.email);
+
+</script>
+</html>
