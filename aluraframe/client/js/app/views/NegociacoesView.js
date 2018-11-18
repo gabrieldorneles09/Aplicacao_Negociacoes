@@ -24,7 +24,7 @@ class NegociacoesView extends View {
                         <td>${DateHelper.dataParaTexto(n.data)}</td>
                         <td>${n.quantidade}</td>
                         <td>${n.valor}</td>
-                        <td>${n.volume}</td>
+                        <td>${n.volume.toFixed(2)}</td>
                     </tr>
                     
                 `).join('')}                
@@ -33,7 +33,7 @@ class NegociacoesView extends View {
             <tfoot>
                 <td colspan="3"></td>
                 <td>
-                    ${model.volumeTotal}
+                    ${model.volumeTotal.toFixed(2)}
                 </td>
             </tfoot>
             
