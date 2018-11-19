@@ -12,7 +12,7 @@
 
         <div class="form-group">
             <label for="data">Data</label>
-            <input type="date" id="data" class="form-control" required autofocus/>        
+            <input type="text" id="data" placeholder="dd/mm/aaaa" class="form-control" required autofocus/>        
         </div>    
 
         <div class="form-group">
@@ -52,7 +52,7 @@
                 .then(() => {
                     inputData.value = '';
                     inputQuantidade.value = 1;
-                    input.Valor.value = 0.0;
+                    inputValor.value = 0.0;
                     inputData.focus();
                     alert('Negociação enviada com sucesso');
                 })
